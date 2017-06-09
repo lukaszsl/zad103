@@ -33,3 +33,16 @@ div#carousel {
 	height: 267px;
 	list-style: none;
 }
+
+#carousel div#button1 {
+	position: absolute;
+    bottom: 50%;
+    transform: translateY(50%);
+}
+
+#carousel div#button2 {
+	position: absolute;
+    bottom: 50%;
+    right: 36%;
+    transform: translate(-15%, 50%);
+}
