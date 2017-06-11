@@ -18,9 +18,10 @@ div#carousel {
 	height: 267px;
 	overflow: hidden;
 	border: 2px solid #000;
+	position: absolute;
 }
 
-#carousel ul {
+#carousel ol {
 	width: 2000px;
 	height: 267px;
 	margin: 0;
@@ -28,21 +29,20 @@ div#carousel {
 	display: flex;
 }
 
-#carousel ul li {
+#carousel ol li {
 	width: 400px;
 	height: 267px;
 	list-style: none;
 }
 
 #carousel div#button1 {
-	position: absolute;
-    bottom: 50%;
-    transform: translateY(50%);
+	position: relative;
+	bottom: 50%;
+	right: 1px;
 }
 
 #carousel div#button2 {
-	position: absolute;
-    bottom: 50%;
-    right: 36%;
-    transform: translate(-15%, 50%);
+	position: relative;
+	bottom: 57%;
+	left: 372px;
 }

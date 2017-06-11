@@ -1,11 +1,12 @@
 $(function() {
-	var carouselList = $('#carousel ul');
+	//carousel
+	var carouselList = $('#carousel ol');
 
 	function changeSlide() {
-		carouselList.animate('marginLeft:-400', 500, moveFirstSlide);
+		carouselList.animate('marginLeft:-400', 500, moveRight);
 	} 
 
-	function moveFirstSlide() {
+	function moveRight() {
 			var firstItem = $('#carousel li:first'),
 				lastItem = $('#carousel li:last');
 
@@ -14,5 +15,26 @@ $(function() {
 			carouselList.css('marginLeft:0');
 	}
 
-	setInterval(changeSlide, 3000);
+	function moveLeft() {
+			var firstItem = $('#carousel li:first'),
+				lastItem = $('#carousel li:last');
+
+			firstItem.before(lastItem);
+
+			carouselList.css('marginLeft:0');
+	}
+
+	setInterval(changeSlide, 10000);
+
+	//side buttons
+	var $button1 = $('#button1 button'),
+		$button2 = $('#button2 button');
+
+	$button1.click(function() {
+		carouselList.animate('marginLeft:-400', 500, moveLeft);
+	});
+
+	$button2.click(function() {
+		carouselList.animate('marginLeft:400', 500, moveRight);
+	});
 });
