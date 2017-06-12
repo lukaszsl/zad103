@@ -35,14 +35,27 @@ div#carousel {
 	list-style: none;
 }
 
-#carousel div#button1 {
-	position: relative;
-	bottom: 50%;
-	right: 1px;
-}
-
-#carousel div#button2 {
+#carousel #button1 {
 	position: relative;
 	bottom: 57%;
-	left: 372px;
+	right: -1px;
+}
+
+#carousel #button2 {
+	position: relative;
+    bottom: 69%;
+    left: 365px;}
+
+#carousel button {
+	cursor: pointer;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255,255,255,0.5);
+    border-style: none;
+    display: none;
+}
+
+button:focus {
+    outline: none;
 }
