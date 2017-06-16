@@ -1,9 +1,10 @@
 $(function() {
 	//carousel
-	var carouselList = $('#carousel ol');
+	var carouselList = $('#carousel ol'),
+		interval;
 
 	function changeSlide() {
-		carouselList.animate('marginLeft:-400', 500, moveRight);
+		carouselList.animate({'marginLeft': -400}, 500, moveRight);
 	} 
 
 	function moveRight() {
@@ -12,7 +13,7 @@ $(function() {
 
 			lastItem.after(firstItem);
 
-			carouselList.css('marginLeft:0');
+			carouselList.css({'marginLeft' :0});
 	}
 
 	function moveLeft() {
@@ -21,10 +22,10 @@ $(function() {
 
 			firstItem.before(lastItem);
 
-			carouselList.css('marginLeft:0');
+			carouselList.css({'marginLeft': -400});
 	}
 
-	setInterval(changeSlide, 10000);
+	interval = setInterval(changeSlide, 10000);
 
 	//side buttons
 	var $button1 = $('#button1'),
@@ -32,20 +33,22 @@ $(function() {
 		$carousel = $('div#carousel');
 
 	$carousel.on('mouseenter', function() {
+		clearInterval(interval);
 		$button1.fadeIn(500);
 		$button2.fadeIn(500);
 	});
 
 	$carousel.on('mouseleave', function() {
+		interval = setInterval(changeSlide, 10000);
 		$button1.fadeOut(500);
 		$button2.fadeOut(500);
 	});
 
 	$button1.click(function() {
-		carouselList.animate('marginLeft:-400', 500, moveLeft);
+		carouselList.animate({'marginLeft': 0}, 500, moveLeft);
 	});
 
 	$button2.click(function() {
-		carouselList.animate('marginLeft:400', 500, moveRight);
+		carouselList.animate({'marginLeft': -400}, 500, moveRight);
 	});
 });
